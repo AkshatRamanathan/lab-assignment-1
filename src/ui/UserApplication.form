@@ -4,7 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[710, 610]"/>
+      <Dimension value="[710, 710]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -48,7 +48,7 @@
       <Properties>
         <Property name="orientation" type="int" value="0"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[700, 690]"/>
+          <Dimension value="[700, 700]"/>
         </Property>
       </Properties>
 
@@ -81,8 +81,11 @@
         </Container>
         <Container class="javax.swing.JPanel" name="bottomPanel">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[700, 211]"/>
+              <Dimension value="[700, 600]"/>
             </Property>
           </Properties>
           <Constraints>

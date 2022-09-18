@@ -4,6 +4,8 @@
  */
 package ui;
 
+import dao.UsersDetails;
+
 /**
  *
  * @author akshb
@@ -13,8 +15,12 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewDetailsPanel
      */
-    public ViewDetailsPanel() {
+    UsersDetails userInfo;
+    public ViewDetailsPanel(UsersDetails userInfo) {
+        this.userInfo=userInfo;
         initComponents();
+        
+        displayUserDetails();
     }
 
     /**
@@ -66,10 +72,11 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
         deg2 = new javax.swing.JTextField();
         deg2Start = new javax.swing.JTextField();
         deg2End = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        imgLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 204));
         setAutoscrolls(true);
-        setPreferredSize(new java.awt.Dimension(700, 610));
+        setPreferredSize(new java.awt.Dimension(700, 710));
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -115,60 +122,19 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
 
         imgLabel.setText("User Photo Image:");
 
-        firstName3.setText("First Name");
         firstName3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstName3ActionPerformed(evt);
             }
         });
 
-        lastName.setText("Last Name");
-
-        dateOfBirth.setText("Date of Birth");
-
-        email.setText("Email");
-
-        telNumber.setText("Telephone Number");
-
-        addr1.setText("Address Line 1");
         addr1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addr1ActionPerformed(evt);
             }
         });
 
-        addr2.setText("Address Line 2");
-
-        age.setText("Age");
-
-        city.setText("City");
-
-        country.setText("Country");
-
-        affiliation.setText("Affiliation");
-
-        major.setText("Major");
-
-        career.setText("Career");
-
-        deg1.setText("Degree 1");
-
-        deg1Start.setText("Degree 1 Start Date");
-
-        deg1End.setText("Degree 1 End Date");
-
-        deg2.setText("Degree 2");
-
-        deg2Start.setText("Degree 2 Start Date");
-
-        deg2End.setText("Degree 2 End Date");
-
-        jButton1.setText("Upload Picture");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        imgLabel1.setText("User Photo Image:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -219,12 +185,14 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
                             .addComponent(major)
                             .addComponent(career)
                             .addComponent(deg1)
-                            .addComponent(deg1Start)
+                            .addComponent(deg1Start, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                             .addComponent(deg1End)
                             .addComponent(deg2)
                             .addComponent(deg2Start)
                             .addComponent(deg2End)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(imgLabel1)))
                         .addGap(0, 16, Short.MAX_VALUE))
                     .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -235,7 +203,7 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
                 .addComponent(titleLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(firstNameLabel)
                             .addComponent(firstName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -275,7 +243,7 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(countryLabel)
                             .addComponent(country, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(affiLabel)
                             .addComponent(affiliation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -312,10 +280,10 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
                             .addComponent(deg2EndLabel)
                             .addComponent(deg2End, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(imgLabel)
-                            .addComponent(jButton1))))
-                .addContainerGap(285, Short.MAX_VALUE))
+                            .addComponent(imgLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(325, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -327,10 +295,31 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_addr1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    public void displayUserDetails(){
+        ///code here
+        firstName3.setText(userInfo.getFirstName());
+        lastName.setText(userInfo.getLastName());
+        affiliation.setText(userInfo.getAffiliation());
+        major.setText(userInfo.getMajor());
+        dateOfBirth.setText(userInfo.getDob());
+        age.setText(String.valueOf(userInfo.getAge()));
+        telNumber.setText(Long.toString(userInfo.getTelNumber()));
+        email.setText(userInfo.getEmail());
+        addr1.setText(userInfo.getAddr1());
+        addr2.setText(userInfo.getAddr2());
+        city.setText(userInfo.getCity());
+        country.setText(userInfo.getCountry());
+        career.setText(userInfo.getCareer());
+        deg1.setText(userInfo.getDegree1());
+        deg1Start.setText(userInfo.getDeg1Start());
+        deg1End.setText(userInfo.getDeg1End());
+        deg2.setText(userInfo.getDegree2());
+        deg2Start.setText(userInfo.getDeg2Start());
+        deg2End.setText(userInfo.getDeg2End());
+        
+//        firstName3.setText(userInfo.getFirstName());
 
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addr1;
@@ -366,7 +355,7 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
     private javax.swing.JTextField firstName3;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JLabel imgLabel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel imgLabel1;
     private javax.swing.JTextField lastName;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JTextField major;

@@ -19,6 +19,7 @@ public class UserApplication extends javax.swing.JFrame {
     UsersDetails userInfo;
     
     public UserApplication() {
+        userInfo = new UsersDetails();
         initComponents();
     }
 
@@ -38,10 +39,10 @@ public class UserApplication extends javax.swing.JFrame {
         showDetails = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(710, 610));
+        setPreferredSize(new java.awt.Dimension(710, 710));
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
-        jSplitPane1.setPreferredSize(new java.awt.Dimension(700, 690));
+        jSplitPane1.setPreferredSize(new java.awt.Dimension(700, 700));
 
         topPanel.setPreferredSize(new java.awt.Dimension(700, 610));
 
@@ -58,7 +59,8 @@ public class UserApplication extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(topPanel);
 
-        bottomPanel.setPreferredSize(new java.awt.Dimension(700, 211));
+        bottomPanel.setBackground(new java.awt.Color(255, 255, 204));
+        bottomPanel.setPreferredSize(new java.awt.Dimension(700, 600));
 
         createButton.setText("Create User Profile");
         createButton.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +123,7 @@ public class UserApplication extends javax.swing.JFrame {
 
     private void showDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showDetailsActionPerformed
         // TODO add your handling code here:
-        ViewDetailsPanel viewPanel = new ViewDetailsPanel();
+        ViewDetailsPanel viewPanel = new ViewDetailsPanel(userInfo);
         jSplitPane1.setTopComponent(viewPanel);
 
     }//GEN-LAST:event_showDetailsActionPerformed

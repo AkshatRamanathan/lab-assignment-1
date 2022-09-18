@@ -5,7 +5,6 @@
 package dao;
 
 import java.awt.Image;
-import java.util.Date;
 
 /**
  *
@@ -14,7 +13,7 @@ import java.util.Date;
 public class UsersDetails {
     private String firstName;
     private String lastName;
-    private Date dob;
+    private String dob;
     private int age;
     private long telNumber;
     private String email;
@@ -26,11 +25,11 @@ public class UsersDetails {
     private String major;
     private String career;
     private String degree1;
-    private Date deg1Start;
-    private Date deg1End;
+    private String deg1Start;
+    private String deg1End;
     private String degree2;
-    private Date deg2Start;
-    private Date deg2End;
+    private String deg2Start;
+    private String deg2End;
     private Image pic;
 
     public void setFirstName(String firstName) {
@@ -41,7 +40,7 @@ public class UsersDetails {
         this.lastName = lastName;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
@@ -89,11 +88,11 @@ public class UsersDetails {
         this.degree1 = degree1;
     }
 
-    public void setDeg1Start(Date deg1Start) {
+    public void setDeg1Start(String deg1Start) {
         this.deg1Start = deg1Start;
     }
 
-    public void setDeg1End(Date deg1End) {
+    public void setDeg1End(String deg1End) {
         this.deg1End = deg1End;
     }
 
@@ -101,11 +100,11 @@ public class UsersDetails {
         this.degree2 = degree2;
     }
 
-    public void setDeg2Start(Date deg2Start) {
+    public void setDeg2Start(String deg2Start) {
         this.deg2Start = deg2Start;
     }
 
-    public void setDeg2End(Date deg2End) {
+    public void setDeg2End(String deg2End) {
         this.deg2End = deg2End;
     }
 
@@ -121,7 +120,7 @@ public class UsersDetails {
         return lastName;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
@@ -169,11 +168,11 @@ public class UsersDetails {
         return degree1;
     }
 
-    public Date getDeg1Start() {
+    public String getDeg1Start() {
         return deg1Start;
     }
 
-    public Date getDeg1End() {
+    public String getDeg1End() {
         return deg1End;
     }
 
@@ -181,11 +180,11 @@ public class UsersDetails {
         return degree2;
     }
 
-    public Date getDeg2Start() {
+    public String getDeg2Start() {
         return deg2Start;
     }
 
-    public Date getDeg2End() {
+    public String getDeg2End() {
         return deg2End;
     }
 

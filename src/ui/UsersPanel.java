@@ -12,6 +12,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -81,8 +82,9 @@ public class UsersPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 204));
         setAutoscrolls(true);
-        setPreferredSize(new java.awt.Dimension(700, 710));
+        setPreferredSize(new java.awt.Dimension(700, 500));
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -126,55 +128,19 @@ public class UsersPanel extends javax.swing.JPanel {
 
         deg2EndLabel.setText("Degree 2 End Date:");
 
-        imgLabel.setText("User Photo Image:");
+        imgLabel.setText("Select File");
 
-        firstName.setText("First Name");
         firstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstNameActionPerformed(evt);
             }
         });
 
-        lastName.setText("Last Name");
-
-        dateOfBirth.setText("Date of Birth");
-
-        email.setText("Email");
-
-        telNumber.setText("Telephone Number");
-
-        addr1.setText("Address Line 1");
         addr1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addr1ActionPerformed(evt);
             }
         });
-
-        addr2.setText("Address Line 2");
-
-        age.setText("Age");
-
-        city.setText("City");
-
-        country.setText("Country");
-
-        affiliation.setText("Affiliation");
-
-        major.setText("Major");
-
-        career.setText("Career");
-
-        deg1.setText("Degree 1");
-
-        deg1Start.setText("Degree 1 Start Date");
-
-        deg1End.setText("Degree 1 End Date");
-
-        deg2.setText("Degree 2");
-
-        deg2Start.setText("Degree 2 Start Date");
-
-        deg2End.setText("Degree 2 End Date");
 
         jButton1.setText("Upload Picture");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -200,20 +166,20 @@ public class UsersPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dobLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(telLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addr1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addr2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(countryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dobLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(telLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(addr1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(addr2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(countryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(country, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                                     .addComponent(dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
@@ -241,7 +207,7 @@ public class UsersPanel extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(saveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(affiliation)
@@ -262,7 +228,7 @@ public class UsersPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(titleLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(firstNameLabel)
@@ -341,10 +307,10 @@ public class UsersPanel extends javax.swing.JPanel {
                             .addComponent(deg2EndLabel)
                             .addComponent(deg2End, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(imgLabel)
-                        .addGap(7, 7, 7)))
+                        .addComponent(imgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addComponent(saveButton)
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -362,9 +328,36 @@ public class UsersPanel extends javax.swing.JPanel {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
-        
+        try {
+
+            userInfo.setFirstName(firstName.getText());
+            userInfo.setLastName(lastName.getText());
+            userInfo.setAffiliation(affiliation.getText());
+            userInfo.setMajor(major.getText());
+            userInfo.setDob(dateOfBirth.getText());
+            userInfo.setCareer(career.getText());
+            userInfo.setAge(Integer.parseInt(age.getText()));
+            userInfo.setDegree1(deg1.getText());
+            userInfo.setDeg1Start(deg1Start.getText());
+            userInfo.setDeg1End(deg1End.getText());
+            userInfo.setDegree2(deg2.getText());
+            userInfo.setDeg2Start(deg2Start.getText());
+            userInfo.setDeg2End(deg2End.getText());
+            userInfo.setAddr1(addr1.getText());
+            userInfo.setAddr2(addr2.getText());
+            userInfo.setCity(city.getText());
+            userInfo.setCountry(country.getText());
+            userInfo.setEmail(email.getText());
+            userInfo.setTelNumber(Long.parseLong(telNumber.getText()));
+//        userInfo.setPic;????????
+            JOptionPane.showMessageDialog(this, "Information is saved successfully.");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please re-enter required information correctly.","Error - Incorrect input",JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_saveButtonActionPerformed
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addr1;
     private javax.swing.JLabel addr1Label;
