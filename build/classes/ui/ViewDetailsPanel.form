@@ -67,20 +67,24 @@
                           <Component id="imgLabel" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                           <Component id="affiLabel" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="affiliation" alignment="0" max="32767" attributes="0"/>
-                          <Component id="major" alignment="0" max="32767" attributes="0"/>
-                          <Component id="career" alignment="0" max="32767" attributes="0"/>
-                          <Component id="deg1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="deg1Start" alignment="0" pref="180" max="32767" attributes="0"/>
-                          <Component id="deg1End" alignment="0" max="32767" attributes="0"/>
-                          <Component id="deg2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="deg2Start" alignment="0" max="32767" attributes="0"/>
-                          <Component id="deg2End" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="affiliation" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="major" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="career" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="deg1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="deg1Start" alignment="0" pref="180" max="32767" attributes="0"/>
+                                  <Component id="deg1End" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="deg2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="deg2Start" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="deg2End" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="imgLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                              <Component id="picLabel" min="-2" pref="92" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
@@ -196,11 +200,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="imgLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="imgLabel1" alignment="3" min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="picLabel" alignment="3" min="-2" pref="99" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="325" max="32767" attributes="0"/>
+              <EmptySpace pref="309" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -359,9 +363,11 @@
     </Component>
     <Component class="javax.swing.JTextField" name="deg2End">
     </Component>
-    <Component class="javax.swing.JLabel" name="imgLabel1">
+    <Component class="javax.swing.JLabel" name="picLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="User Photo Image:"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[60, 20]"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

@@ -5,10 +5,8 @@
 package ui;
 
 import dao.UsersDetails;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -128,7 +126,8 @@ public class UsersPanel extends javax.swing.JPanel {
 
         deg2EndLabel.setText("Degree 2 End Date:");
 
-        imgLabel.setText("Select File");
+        imgLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        imgLabel.setForeground(new java.awt.Color(51, 204, 0));
 
         firstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,6 +323,20 @@ public class UsersPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        JFileChooser file = new JFileChooser();
+        if (file.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            try {
+                BufferedImage img = ImageIO.read(file.getSelectedFile());
+                Image edited_image = img.getScaledInstance(60, 20, Image.SCALE_SMOOTH);
+                if (edited_image != null) {
+                    imgLabel.setText(file.getSelectedFile().getAbsolutePath());
+                    this.userInfo.setPic(new ImageIcon(edited_image));
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Please upload image correctly correctly.", "Error - Incorrect image", JOptionPane.ERROR_MESSAGE);
+                ex.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
@@ -349,11 +362,9 @@ public class UsersPanel extends javax.swing.JPanel {
             userInfo.setCountry(country.getText());
             userInfo.setEmail(email.getText());
             userInfo.setTelNumber(Long.parseLong(telNumber.getText()));
-//        userInfo.setPic;????????
             JOptionPane.showMessageDialog(this, "Information is saved successfully.");
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, "Please re-enter required information correctly.","Error - Incorrect input",JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please re-enter required information correctly.", "Error - Incorrect input", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_saveButtonActionPerformed

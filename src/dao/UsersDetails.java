@@ -4,7 +4,7 @@
  */
 package dao;
 
-import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -30,7 +30,7 @@ public class UsersDetails {
     private String degree2;
     private String deg2Start;
     private String deg2End;
-    private Image pic;
+    private ImageIcon pic;
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -108,7 +108,7 @@ public class UsersDetails {
         this.deg2End = deg2End;
     }
 
-    public void setPic(Image pic) {
+    public void setPic(ImageIcon pic) {
         this.pic = pic;
     }
 
@@ -188,7 +188,7 @@ public class UsersDetails {
         return deg2End;
     }
 
-    public Image getPic() {
+    public ImageIcon getPic() {
         return pic;
     }
     

@@ -16,10 +16,11 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
      * Creates new form ViewDetailsPanel
      */
     UsersDetails userInfo;
+
     public ViewDetailsPanel(UsersDetails userInfo) {
-        this.userInfo=userInfo;
+        this.userInfo = userInfo;
         initComponents();
-        
+
         displayUserDetails();
     }
 
@@ -72,7 +73,7 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
         deg2 = new javax.swing.JTextField();
         deg2Start = new javax.swing.JTextField();
         deg2End = new javax.swing.JTextField();
-        imgLabel1 = new javax.swing.JLabel();
+        picLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 204));
         setAutoscrolls(true);
@@ -134,7 +135,7 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
             }
         });
 
-        imgLabel1.setText("User Photo Image:");
+        picLabel.setPreferredSize(new java.awt.Dimension(60, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -179,20 +180,22 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
                             .addComponent(deg2EndLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(imgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(affiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(affiliation)
-                            .addComponent(major)
-                            .addComponent(career)
-                            .addComponent(deg1)
-                            .addComponent(deg1Start, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                            .addComponent(deg1End)
-                            .addComponent(deg2)
-                            .addComponent(deg2Start)
-                            .addComponent(deg2End)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(imgLabel1)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(affiliation)
+                                    .addComponent(major)
+                                    .addComponent(career)
+                                    .addComponent(deg1)
+                                    .addComponent(deg1Start, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(deg1End)
+                                    .addComponent(deg2)
+                                    .addComponent(deg2Start)
+                                    .addComponent(deg2End)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(picLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 16, Short.MAX_VALUE))
                     .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -282,8 +285,8 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(imgLabel)
-                            .addComponent(imgLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(325, Short.MAX_VALUE))
+                            .addComponent(picLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -295,7 +298,7 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_addr1ActionPerformed
 
-    public void displayUserDetails(){
+    public void displayUserDetails() {
         ///code here
         firstName3.setText(userInfo.getFirstName());
         lastName.setText(userInfo.getLastName());
@@ -316,8 +319,7 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
         deg2.setText(userInfo.getDegree2());
         deg2Start.setText(userInfo.getDeg2Start());
         deg2End.setText(userInfo.getDeg2End());
-        
-//        firstName3.setText(userInfo.getFirstName());
+        picLabel.setIcon(userInfo.getPic());
 
     }
 
@@ -355,11 +357,11 @@ public class ViewDetailsPanel extends javax.swing.JPanel {
     private javax.swing.JTextField firstName3;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JLabel imgLabel;
-    private javax.swing.JLabel imgLabel1;
     private javax.swing.JTextField lastName;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JTextField major;
     private javax.swing.JLabel majorLabel;
+    private javax.swing.JLabel picLabel;
     private javax.swing.JLabel telLabel;
     private javax.swing.JTextField telNumber;
     private javax.swing.JLabel titleLabel;
