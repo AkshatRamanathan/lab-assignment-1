@@ -327,7 +327,7 @@ public class UsersPanel extends javax.swing.JPanel {
         if (file.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             try {
                 BufferedImage img = ImageIO.read(file.getSelectedFile());
-                Image edited_image = img.getScaledInstance(60, 20, Image.SCALE_SMOOTH);
+                Image edited_image = img.getScaledInstance(60, 80, Image.SCALE_SMOOTH);
                 if (edited_image != null) {
                     imgLabel.setText(file.getSelectedFile().getAbsolutePath());
                     this.userInfo.setPic(new ImageIcon(edited_image));
